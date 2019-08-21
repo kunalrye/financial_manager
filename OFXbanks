@@ -1,0 +1,9 @@
+import urllib2
+
+query = open('req.ofxsgml').read()
+request = urllib2.Request('https://pfmpw.wachovia.com/cgi-forte/fortecgi?servicename=ofx&amp;pagename=PFM',
+                              query,
+                              { "Content-type": "application/x-ofx",
+                                "Accept": "*/*, application/x-ofx"
+                              })
+ f = urllib2.urlopen(request)
